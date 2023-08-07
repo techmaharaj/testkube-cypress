@@ -1,13 +1,13 @@
 describe("The Home Page", () => {
   it("successfully loads", () => {
-    cy.visit("https://testkube.kubeshop.io");
+    cy.visit("http://django-test.com:30001/index.html");
 
     cy.contains(
-      "Testkube provides a Kubernetes-native framework for test definition, execution and results"
+      "We Love Socks!"
     ).should("be.visible");
 
     cy.contains(
-      "Your friendly cloud-native testing framework for Kubernetes"
+      "Best Prices"
     ).should("be.visible");
   });
 });
