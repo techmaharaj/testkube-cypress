@@ -19,7 +19,6 @@ jobs:
 
       # Running test
       - name: Run test
-        id: 6503f05cdd2721d4fd3c128c
         uses: kubeshop/testkube-docker-action@v1
         with:
           command: run
