@@ -10,19 +10,12 @@ jobs:
     name: test workflow for local minikube.
     runs-on: self-hosted
     steps:
-      - uses: kubeshop/testkube-run-action@v1
+      - name: Run test
+        uses: kubeshop/testkube-run-action@v1
         with:
         # Instance
           organization: ${{ secrets.TkOrganization }}
           environment: ${{ secrets.TkEnvironment }}
           token: ${{ secrets.TkToken }}
           url: https://api.testkube.dev/
-          test: curl-url-test
-
-      # Running test
-      - name: Run test
-        uses: kubeshop/testkube-docker-action@v1
-        with:
-          command: run
-          resource: test
           test: curl-url-test
