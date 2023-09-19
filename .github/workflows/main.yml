@@ -16,6 +16,7 @@ jobs:
           organization: ${{ secrets.TkOrganization }}
           environment: ${{ secrets.TkEnvironment }}
           token: ${{ secrets.TkToken }}
+          url: https://cloud.testkube.dev/
           test: curl-url-test
 
       # Running test
