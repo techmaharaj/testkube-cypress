@@ -1,0 +1,27 @@
+name: Running Testkube Tests.
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_worflow:
+    name: test workflow for local minikube.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kubeshop/testkube-run-action@v1
+        with:
+        # Instance
+          organization: ${{ secrets.TkOrganization }}
+          environment: ${{ secrets.TkEnvironment }}
+          token: ${{ secrets.TkToken }}
+
+      # Running test
+      - name: Run test
+        id: run_test
+        uses: kubeshop/testkube-docker-action@v1
+        with:
+          command: run
+          resource: test
+          test: curl-url-test
